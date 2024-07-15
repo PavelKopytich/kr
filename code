@@ -1,0 +1,42 @@
+using System;
+
+class Program
+{
+static void Main(string[] args)
+{
+string[] inputArray = {"abc", "defgh", "ijk", "lmno", "pqrst"};
+int inputLength = inputArray.Length;
+int outputLength = 0;
+for (int i = 0; i < inputLength; i++)
+    {
+        if (inputArray[i].Length <= 3)
+        {
+            outputLength++;
+        }
+    }
+
+    string[] outputArray = new string[outputLength];
+    int outputIndex = 0;
+
+    for (int i = 0; i < inputLength; i++)
+    {
+        if (inputArray[i].Length <= 3)
+        {
+            outputArray[outputIndex] = inputArray[i];
+            outputIndex++;
+        }
+    }
+
+    Console.WriteLine("Исходный массив:");
+    foreach (string s in inputArray)
+    {
+        Console.WriteLine(s);
+    }
+
+    Console.WriteLine("Массив, состоящий из строк длиной не более 3 символов:");
+    foreach (string s in outputArray)
+    {
+        Console.WriteLine(s);
+    }
+}
+}
